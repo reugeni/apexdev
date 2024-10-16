@@ -22,7 +22,7 @@ rm ords-latest.zip
 /opt/ords/bin/ords --config /opt/ords/config install \
      --log-folder /etc/ords/logs \
      --admin-user SYS \
-     --db-hostname db \
+     --db-hostname dbora \
      --db-port 1521 \
      --db-servicename FREEPDB1 \
      --feature-db-api true \
@@ -42,7 +42,7 @@ sed -i '/<\/properties>/i<entry key="misc.defaultPage">apex</entry>' /opt/ords/c
 # Deploy ORDS into Tomcat Webapps
 mkdir /usr/local/tomcat/webapps/i
 cp -r /opt/apex/images/* /usr/local/tomcat/webapps/i/
-cp -r /opt/apex/apex_patch/36695709/images/* /usr/local/tomcat/webapps/i/
+#cp -r /opt/apex/apex_patch/36695709/images/* /usr/local/tomcat/webapps/i/
 cp /opt/ords/ords.war /usr/local/tomcat/webapps/
 sed -i '/-Djava.protocol.handler/aJAVA_OPTS="\$JAVA_OPTS -Dconfig.url=/opt/ords/config -Xms1024M -Xmx1024M"' /usr/local/tomcat/bin/catalina.sh
 
