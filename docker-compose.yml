@@ -7,7 +7,7 @@ services:
       APEX_PWD: ${APEX_PWD:-apex#Pwd}
     volumes:
       - ./apex:/opt/apex
-      - ./02_ords_install.sh /tmp/02_ords_install.sh
+      - ./02_ords_install.sh:/tmp/02_ords_install.sh
     ports:
       - ${TOMCAT_PORT:-18080}:8080
     depends_on:
