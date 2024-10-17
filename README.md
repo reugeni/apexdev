@@ -19,6 +19,12 @@ Oracle APEX/ORDS Development
   docker compose exec -it tomcat bash
   /tmp/02_ords_install.sh
   ```
+  * install JRI (JasperReportsIntegration)
+  ```
+  docker compose cp 03_jri_install.sh tomcat:/tmp/
+  docker compose exec -it tomcat bash
+  /tmp/03_jri_install.sh
+  ```
 * restart Tomcat
   ```
   docker compose restart -t 30 tomcat
