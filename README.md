@@ -11,17 +11,17 @@ Oracle APEX/ORDS Development
   ```
 * install APEX 
   ```
-  docker exec -it {project}-db-1 bash
+  docker compose exec -it dbora bash
   ./01_apex_install.sh
   ```
 * install ORDS
   ```
-  docker exec -it {project}-app-1 bash
+  docker compose exec -it tomcat bash
   /tmp/02_ords_install.sh
   ```
 * restart Tomcat
   ```
-  docker restart -t 30 {project}-app-1
+  docker compose restart -t 30 tomcat
   ```
 
 ### Other reference
