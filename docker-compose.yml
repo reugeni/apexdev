@@ -24,7 +24,7 @@ services:
     volumes:
       - ./oradata:/opt/oracle/oradata
       - ./apex:/home/oracle/apex
-      - ./01_apex_install.sh /home/oracle/01_apex_install.sh
+      - ./01_apex_install.sh:/home/oracle/01_apex_install.sh
     ports:
       - ${ORACLE_PORT:-11521}:1521
     restart: "unless-stopped"
